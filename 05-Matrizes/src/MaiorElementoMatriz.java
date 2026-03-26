@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SomaInteiros {
+public class MaiorElementoMatriz {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -16,14 +16,17 @@ public class SomaInteiros {
 		}
 
 		for (int i = 0; i < n; i++) {
-			int soma = 0;
-			for (int j = 0; j < n; j++) {
-				soma += mat[i][j];
+			int maior = mat[i][0];
+			for (int j = 1; j < n; j++) {
+				if (mat[i][j] > maior) {
+					maior = mat[i][j];
+				}
 			}
-			System.out.println(soma);
+			System.out.println(maior);
 		}
 
 		sc.close();
+
 	}
 
 }

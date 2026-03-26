@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SomaInteiros {
+public class SomaAcimaDiagonalPrincipal {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -9,19 +9,19 @@ public class SomaInteiros {
 
 		int[][] mat = new int[n][n];
 
+		int soma = 0;
+
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				mat[i][j] = sc.nextInt();
+				
+				if (j > i) {
+					soma += mat[i][j];
+				}
 			}
 		}
 
-		for (int i = 0; i < n; i++) {
-			int soma = 0;
-			for (int j = 0; j < n; j++) {
-				soma += mat[i][j];
-			}
-			System.out.println(soma);
-		}
+		System.out.println(soma);
 
 		sc.close();
 	}
